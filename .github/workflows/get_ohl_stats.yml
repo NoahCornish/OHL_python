@@ -15,6 +15,15 @@ jobs:
         run: |
           echo "Workflow started at: $(date -u)" >> $GITHUB_STEP_SUMMARY
 
+      - name: Check Date
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          END_DATE="2025-01-24"
+          if [[ "$TODAY" > "$END_DATE" ]]; then
+            echo "We're excited to announce a temporary pause for our bot as we perform essential maintenance to enhance its performance and features. Stay tuned for its return, better and more powerful than ever!."
+            exit 0
+          fi
+
       - name: Checkout Repository
         uses: actions/checkout@v3
 

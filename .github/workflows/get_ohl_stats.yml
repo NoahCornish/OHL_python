@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run_stats_scraper:
+  fetch_stats:
     runs-on: ubuntu-latest
 
     steps:
@@ -65,4 +65,3 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

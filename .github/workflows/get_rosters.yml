@@ -2,8 +2,7 @@ name: Run OHL Roster Scraper
 
 on:
   schedule:
-    # Run daily at 20:15 UTC (15:15 Toronto time during EST)
-    - cron: "15 20 * * *"
+    - cron: "45 20 * * *"  # Run daily at 21:00 UTC (16:00 Toronto time during EST)
   workflow_dispatch:
 
 jobs:
@@ -11,44 +10,68 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository
-      - name: Checkout repository
+      # Step 1: Log Start Time
+      - name: Log Start Time
+        run: echo "Workflow started at: $(date -u)" >> $GITHUB_STEP_SUMMARY
+
+      # Step 2: Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python environment
-      - name: Set up Python
+      # Step 3: Set Up Python
+      - name: Set Up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.12.1
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
+      # Step 4: Install Dependencies
+      - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      # Step 4: Run the Roster Scraper
+      # Step 5: Run the Roster Scraper
       - name: Run the Roster Scraper
         run: |
-          python get_rosters.py
+          start_time=$(date +%s)
+          python get_rosters.py > scraper_log.txt 2>&1
+          end_time=$(date +%s)
+          duration=$((end_time - start_time))
+          echo "Workflow runtime: $((duration / 60)) minutes and $((duration % 60)) seconds." >> $GITHUB_STEP_SUMMARY
 
-      # Step 5: Create Folder if Not Exists
-      - name: Create Folder
-        run: mkdir -p OHL_ROSTERS_TEST
-
-      # Step 6: Check for Changes
-      - name: Check for Changes
+      # Step 6: Verify CSV File Exists
+      - name: Verify CSV File Exists
         run: |
-          if [ -f OHL_ROSTERS_TEST/OHL_ROSTERS_2024_2025.csv ]; then
-            if cmp -s OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_TEST/OHL_ROSTERS_2024_2025.csv; then
-              echo "NO CHANGES TO OHL ROSTERS IN THIS UPDATE";
-              exit 0;
-            fi
+          if [ ! -f "OHL_ROSTERS_2024_2025.csv" ]; then
+            echo "Error: CSV file not generated!";
+            exit 1;
           fi
 
-      # Step 7: Move the New File to the Folder
-      - name: Move New CSV File
-        run: mv OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_TEST/
+      # Step 7: Archive Old CSV
+      - name: Archive Old CSV
+        run: |
+          mkdir -p OHL_ROSTERS_ARCHIVE
+          if [ -f OHL_ROSTERS_TEST/OHL_ROSTERS_2024_2025.csv ]; then
+            timestamp=$(date +%Y%m%d_%H%M%S)
+            mv OHL_ROSTERS_TEST/OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_ARCHIVE/OHL_ROSTERS_2024_2025_${timestamp}.csv
+          fi
 
-      # Step 8: Commit and Push Changes
+      # Step 8: Move New CSV to Folder
+      - name: Move New CSV to Folder
+        run: |
+          mkdir -p OHL_ROSTERS_TEST
+          mv OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_TEST/
+
+      # Step 9: Check for Changes
+      - name: Check for Changes
+        run: |
+          if git diff --quiet; then
+            echo "No OHL Roster changes. Exiting Successfully..." >> $GITHUB_STEP_SUMMARY
+            exit 0;
+          else
+            echo "Changes detected in OHL Rosters. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
+            git diff --stat >> $GITHUB_STEP_SUMMARY
+          fi
+
+      # Step 10: Commit and Push Changes
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
@@ -58,3 +81,8 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 11: Summarize Workflow Status
+      - name: Summarize Workflow Status
+        run: |
+          echo "Workflow completed successfully." >> $GITHUB_STEP_SUMMARY

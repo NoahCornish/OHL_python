@@ -2,7 +2,7 @@ name: Daily Roster Scraper
 
 on:
   schedule:
-  - cron: '*/5 * * * *'  # Run every 5 minutes
+  - cron: '10 4 * * *'  # Run every 5 minutes
   workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:

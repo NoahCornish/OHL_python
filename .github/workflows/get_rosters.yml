@@ -1,11 +1,9 @@
 name: Run OHL Roster Scraper
 
 on:
-  # Allow the workflow to run on a schedule
   schedule:
-    # Run daily at 19:40 UTC (14:40 Toronto time during EST)
-    - cron: "50 19 * * *"
-  # Allow manual triggers via the GitHub Actions UI
+    # Run daily at 20:15 UTC (15:15 Toronto time during EST)
+    - cron: "15 20 * * *"
   workflow_dispatch:
 
 jobs:
@@ -21,25 +19,36 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.12.1  # Adjust this to match your Python version
+          python-version: 3.12.1
 
       # Step 3: Install dependencies
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
-      # Step 4: Run the Python script
+      # Step 4: Run the Roster Scraper
       - name: Run the Roster Scraper
         run: |
           python get_rosters.py
 
-      # Step 5: Move the generated CSV to the target folder
-      - name: Move CSV to Folder
-        run: |
-          mkdir -p OHL_ROSTERS_TEST
-          mv OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_TEST/
+      # Step 5: Create Folder if Not Exists
+      - name: Create Folder
+        run: mkdir -p OHL_ROSTERS_TEST
 
-      # Step 6: Commit and push changes back to the repository
+      # Step 6: Check for Changes
+      - name: Check for Changes
+        run: |
+          if [ -f OHL_ROSTERS_TEST/OHL_ROSTERS_2024_2025.csv ]; then
+            if cmp -s OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_TEST/OHL_ROSTERS_2024_2025.csv; then
+              echo "NO CHANGES TO OHL ROSTERS IN THIS UPDATE";
+              exit 0;
+            fi
+          fi
+
+      # Step 7: Move the New File to the Folder
+      - name: Move New CSV File
+        run: mv OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_TEST/
+
+      # Step 8: Commit and Push Changes
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
@@ -49,4 +58,3 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

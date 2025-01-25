@@ -1,0 +1,37 @@
+name: Daily Roster Scraper
+
+on:
+  schedule:
+    # Schedule the script to run daily at 22:45 PM EDT (02:45 AM UTC)
+    - cron: '45 2 * * *'
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  scrape_rosters:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install requests pandas
+
+      # Step 4: Run the Python script
+      - name: Run roster scraper
+        run: python get_rosters.py
+
+      # Step 5: Upload the output CSV file as an artifact (optional)
+      - name: Upload rosters_updated.csv
+        uses: actions/upload-artifact@v3
+        with:
+          name: rosters_output
+          path: rosters_updated.csv

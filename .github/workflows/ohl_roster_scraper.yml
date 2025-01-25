@@ -29,12 +29,17 @@ jobs:
       - name: Run roster scraper
         run: python get_rosters.py
 
-      # Step 5: Commit and push the CSV file to the repository
+      # Step 5: Move the CSV to "OHL Rosters" folder
+      - name: Move CSV to folder
+        run: |
+          mkdir -p "OHL Rosters"  # Create the folder if it doesn't exist
+          mv rosters_updated.csv "OHL Rosters/"
+
+      # Step 6: Commit and push the CSV file to the repository
       - name: Commit and push CSV
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add rosters_updated.csv
-          git commit -m "Update rosters_updated.csv [skip ci]"
+          git add "OHL Rosters/rosters_updated.csv"
+          git commit -m "Update OHL Rosters/rosters_updated.csv [skip ci]"
           git push
-

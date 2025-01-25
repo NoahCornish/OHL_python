@@ -2,7 +2,7 @@ name: Run OHL Roster Scraper
 
 on:
   schedule:
-    - cron: "45 20 * * *"  # Run daily at 20:45 UTC (15:45 Toronto time during EST)
+    - cron: "0 21 * * *"  # Run daily at 20:45 UTC (15:45 Toronto time during EST)
   workflow_dispatch:
 
 jobs:
@@ -10,26 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Log Start Time
       - name: Log Start Time
         run: |
           echo "Workflow started at: $(date -u)" >> $GITHUB_STEP_SUMMARY
 
-      # Step 2: Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Step 3: Set Up Python
       - name: Set Up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.12.1
 
-      # Step 4: Install Dependencies
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      # Step 5: Run the Roster Scraper
       - name: Run the Roster Scraper
         run: |
           start_time=$(date +%s)
@@ -38,7 +33,6 @@ jobs:
           duration=$((end_time - start_time))
           echo "Workflow runtime: $((duration / 60)) minutes and $((duration % 60)) seconds." >> $GITHUB_STEP_SUMMARY
 
-      # Step 6: Verify CSV File Exists
       - name: Verify CSV File Exists
         run: |
           if [ ! -f "OHL_ROSTERS_2024_2025.csv" ]; then
@@ -46,7 +40,6 @@ jobs:
             exit 1;
           fi
 
-      # Step 7: Archive Old CSV
       - name: Archive Old CSV
         run: |
           mkdir -p OHL_ROSTERS_ARCHIVE
@@ -55,13 +48,11 @@ jobs:
             mv OHL_ROSTERS_TEST/OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_ARCHIVE/OHL_ROSTERS_2024_2025_${timestamp}.csv
           fi
 
-      # Step 8: Move New CSV to Folder
       - name: Move New CSV to Folder
         run: |
           mkdir -p OHL_ROSTERS_TEST
           mv OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_TEST/
 
-      # Step 9: Check for Changes
       - name: Check for Changes
         run: |
           if git diff --quiet; then
@@ -72,18 +63,14 @@ jobs:
             git diff --stat >> $GITHUB_STEP_SUMMARY
           fi
 
-      # Step 10: Commit and Push Changes
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add OHL_ROSTERS_TEST/OHL_ROSTERS_2024_2025.csv
-          git commit -m "Automated update: OHL Rosters CSV"
+          git add OHL_ROSTERS_ARCHIVE/
+          git commit -m "Automated update: OHL Rosters CSV and archive"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 11: Summarize Workflow Status
-      - name: Summarize Workflow Status
-        run: |
-          echo "Workflow completed successfully." >> $GITHUB_STEP_SUMMARY

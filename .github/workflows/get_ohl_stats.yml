@@ -1,4 +1,4 @@
-name: Run OHL Stats Scraper
+name: Get OHL Stats
 
 on:
   schedule:

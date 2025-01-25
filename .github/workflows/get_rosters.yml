@@ -1,9 +1,12 @@
 name: Run OHL Roster Scraper
 
 on:
+  # Allow the workflow to run on a schedule
   schedule:
     # Run daily at 19:40 UTC (14:40 Toronto time during EST)
-    - cron: "40 19 * * *"
+    - cron: "50 19 * * *"
+  # Allow manual triggers via the GitHub Actions UI
+  workflow_dispatch:
 
 jobs:
   run_roster_scraper:
@@ -18,7 +21,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.13.1  # Adjust this to match your Python version
+          python-version: 3.12.1  # Adjust this to match your Python version
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -45,5 +48,5 @@ jobs:
           git commit -m "Automated update: OHL Rosters CSV"
           git push
         env:
-          # Provide write permissions for the GitHub token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

@@ -2,7 +2,7 @@ name: Run OHL Roster Scraper
 
 on:
   schedule:
-    - cron: "45 20 * * *"  # Run daily at 21:00 UTC (16:00 Toronto time during EST)
+    - cron: "45 20 * * *"  # Run daily at 20:45 UTC (15:45 Toronto time during EST)
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,8 @@ jobs:
     steps:
       # Step 1: Log Start Time
       - name: Log Start Time
-        run: echo "Workflow started at: $(date -u)" >> $GITHUB_STEP_SUMMARY
+        run: |
+          echo "Workflow started at: $(date -u)" >> $GITHUB_STEP_SUMMARY
 
       # Step 2: Checkout Repository
       - name: Checkout Repository

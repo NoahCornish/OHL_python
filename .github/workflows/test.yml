@@ -3,7 +3,7 @@ name: OHL Roster Scraper
 on:
   schedule:
     # Schedule the script to run daily at 11:20 PM Toronto time (04:20 AM UTC)
-    - cron: '25 4 * * *'
+    - cron: '20 4 * * *'
   workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:

@@ -7,10 +7,10 @@ Kieron Walton,NO,22,,2006.0,6.06,216,LW,Sudbury Wolves,43,27,43,70,1.63,5,11,21,
 Beckett Sennecke,NO,45,,2006.0,6.04,195,RW,Oshawa Generals,38,29,39,68,1.79,18,10,18,2,0,38,28,41.2,96.5
 Patrick Thomas,NO,93,,2004.0,6.00,178,C,Brantford Bulldogs,45,20,47,67,1.49,9,9,16,6,1,6,25,37.3,113.5
 Ryan Roobroeck,NO,25,,2007.0,6.04,190,LW,Niagara IceDogs,45,31,34,65,1.44,0,8,10,4,4,8,18,27.7,105.0
-Cedrick Guindon,NO,93,,2004.0,5.10,182,C,Kingston Frontenacs,44,27,37,64,1.45,21,10,9,0,2,4,19,29.7,126.5
-Jacob Battaglia,NO,88,,2006.0,6.01,202,LW,Kingston Frontenacs,44,27,35,62,1.41,7,9,11,2,2,22,20,32.3,91.5
+Cedrick Guindon,NO,93,,2004.0,5.10,182,C,Kingston Frontenacs,44,27,37,64,1.45,19,10,9,0,2,4,19,29.7,124.5
+Jacob Battaglia,NO,88,,2006.0,6.01,202,LW,Kingston Frontenacs,44,27,35,62,1.41,5,9,11,2,2,22,20,32.3,89.5
 Porter Martone,NO,94,,2006.0,6.03,208,RW,Brampton Steelheads,33,22,40,62,1.88,15,3,12,2,0,49,15,24.2,70.0
-Tuomas Uronen,NO,8,,2005.0,6.00,194,RW,Kingston Frontenacs,39,25,35,60,1.54,19,8,16,4,1,19,24,40.0,102.5
+Tuomas Uronen,NO,8,,2005.0,6.00,194,RW,Kingston Frontenacs,39,25,35,60,1.54,17,8,16,4,1,19,24,40.0,100.5
 Jake O'Brien,NO,44,,2007.0,6.02,170,C,Brantford Bulldogs,45,25,34,59,1.31,-9,8,20,2,1,10,28,47.5,82.0
 Henry Mews,NO,88,,2006.0,6.01,183,D,Sudbury Wolves,44,12,47,59,1.34,-9,5,26,1,0,54,31,52.5,31.5
 Denver Barkey,NO,86,,2005.0,5.10,171,LW,London Knights,37,16,42,58,1.57,32,7,17,0,1,16,24,41.4,111.0
@@ -42,7 +42,7 @@ Marco Mignosa,NO,26,,2005.0,5.11,170,RW,Soo Greyhounds,34,18,24,42,1.24,-7,2,13,
 Jack Nesbitt,NO,71,,2007.0,6.04,182,C,Windsor Spitfires,45,17,25,42,0.93,11,3,7,4,2,43,10,23.8,39.5
 Luke Torrance,NO,17,,2004.0,6.01,199,LW,Oshawa Generals,42,16,26,42,1.0,20,7,11,1,0,19,18,42.9,72.0
 Ryan Abraham,NO,12,,2004.0,5.08,168,C,Windsor Spitfires,44,15,27,42,0.95,8,5,7,1,1,30,12,28.6,48.5
-Emil Pieniniemi,NO,7,,2005.0,6.03,177,D,Kingston Frontenacs,39,6,36,42,1.08,4,2,20,2,0,18,22,52.4,52.0
+Emil Pieniniemi,NO,7,,2005.0,6.03,177,D,Kingston Frontenacs,39,6,36,42,1.08,3,2,20,2,0,18,22,52.4,51.0
 Sam O'Reilly,NO,23,,2006.0,6.01,190,C,London Knights,42,18,23,41,0.98,34,4,8,4,0,16,12,29.3,88.5
 Landen Hookey,NO,10,,2004.0,6.05,222,RW,Owen Sound Attack,44,19,21,40,0.91,-4,6,6,3,1,43,12,30.0,22.5
 Cam Allen,NO,17,,2005.0,6.00,197,D,London Knights,40,10,30,40,1.0,13,3,6,1,0,45,9,22.5,33.0
@@ -165,7 +165,7 @@ Martin Matejicek,NO,5,,2005.0,6.02,205,D,Peterborough Petes,45,7,13,20,0.44,-9,1
 Bruce McDonald,NO,29,,2004.0,6.00,177,C,Owen Sound Attack,43,6,14,20,0.47,-12,0,6,1,1,8,6,30.0,13.0
 James Guo,NO,73,,2005.0,6.01,195,RD,Saginaw Spirit,39,4,16,20,0.51,15,0,2,1,0,25,2,10.0,22.0
 Sebastien Gervais,NO,15,,2005.0,6.01,190,C,Saginaw Spirit,34,3,17,20,0.59,-6,0,4,1,0,14,4,20.0,11.5
-Vann Williamson,NO,27,,2006.0,6.01,188,D,Kingston Frontenacs,43,2,18,20,0.47,16,0,2,1,0,16,2,10.0,31.0
+Vann Williamson,NO,27,,2006.0,6.01,188,D,Kingston Frontenacs,44,2,18,20,0.45,15,0,2,1,0,16,2,10.0,30.0
 Carson Campbell,NO,8,,2006.0,6.01,180,RD,Kitchener Rangers,43,1,19,20,0.47,18,0,0,0,0,20,0,0.0,28.5
 Ben Pickell,NO,12,,2005.0,5.09,186,C,Kingston Frontenacs,43,9,10,19,0.44,7,0,0,1,0,34,0,0.0,6.0
 Joshua Avery,YES,86,,2007.0,6.01,170,C,Brantford Bulldogs,44,8,11,19,0.43,2,1,0,0,0,10,1,5.3,24.5
@@ -200,7 +200,7 @@ Jakub Fibigr,NO,5,,2006.0,6.00,171,D,Brampton Steelheads,32,3,14,17,0.53,5,1,1,0
 Max Crete,YES,23,,2008.0,5.09,182,C,Niagara IceDogs,45,10,6,16,0.36,-11,2,1,1,1,38,3,18.8,-20.0
 Ethan Hay,NO,68,,2005.0,6.01,195,C,Kingston Frontenacs,40,9,7,16,0.4,-17,4,1,0,0,69,5,31.2,-57.5
 Marek Vanacker,NO,78,,2006.0,6.01,170,LW,Brantford Bulldogs,22,7,9,16,0.73,0,1,3,0,1,20,4,25.0,7.5
-Maleek McGowan,NO,11,,2005.0,6.00,190,D,Kingston Frontenacs,35,6,10,16,0.46,12,0,0,2,0,22,0,0.0,17.0
+Maleek McGowan,NO,11,,2005.0,6.00,190,D,Kingston Frontenacs,35,6,10,16,0.46,11,0,0,2,0,22,0,0.0,16.0
 Parker Von Richter,NO,6,,2006.0,6.01,195,D,Brampton Steelheads,36,6,10,16,0.44,9,3,1,1,0,12,4,25.0,24.0
 Harry Nansi,NO,34,,2007.0,6.03,179,RW,Owen Sound Attack,43,5,11,16,0.37,-2,0,2,2,0,8,2,12.5,16.5
 Braedyn Rogers,NO,2,,2006.0,6.00,180,RD,Owen Sound Attack,44,4,12,16,0.36,-11,1,3,0,0,25,4,25.0,-10.0
@@ -227,7 +227,7 @@ Owen Outwater,NO,93,,2005.0,6.02,187,LW,Windsor Spitfires,26,5,9,14,0.54,-4,1,3,
 Urban Podrekar,NO,98,,2005.0,6.00,194,D,Flint Firebirds,41,5,9,14,0.34,-4,2,1,1,0,23,3,21.4,-3.5
 Brooks Rogowski,YES,10,,2008.0,6.06,214,RW,Oshawa Generals,44,5,9,14,0.32,-5,1,0,0,0,0,1,7.1,18.5
 Thomas Budnick,NO,24,,2004.0,6.01,210,D,Brantford Bulldogs,23,4,10,14,0.61,16,0,0,1,0,27,0,0.0,12.0
-Will Bishop,NO,6,,2005.0,6.06,210,RD,Kingston Frontenacs,42,3,11,14,0.33,1,0,0,0,1,26,0,0.0,-2.5
+Will Bishop,NO,6,,2005.0,6.06,210,RD,Kingston Frontenacs,42,3,11,14,0.33,0,0,0,0,1,26,0,0.0,-3.5
 Lucas Moore,NO,4,,2005.0,5.10,193,D,Brantford Bulldogs,45,3,11,14,0.31,-4,1,0,0,0,56,1,7.1,-37.5
 PJ Forgione,NO,27,,2004.0,6.02,215,LD,Saginaw Spirit,43,2,12,14,0.33,15,0,0,1,0,40,0,0.0,-3.0
 Caeden Carlisle,NO,7,,2004.0,6.01.,197,D,Soo Greyhounds,42,1,13,14,0.33,-12,0,4,0,0,56,4,28.6,-46.5
@@ -244,7 +244,7 @@ Hudson Chitaroni,YES,91,,2007.0,5.10,178,C,Sudbury Wolves,43,5,8,13,0.3,-8,2,2,4
 Noah Van Vliet,NO,5,,2004.0,6.02,222,D,Niagara IceDogs,45,4,9,13,0.29,13,0,0,1,0,68,0,0.0,-33.5
 Rene Van Bommel,NO,55,,2006.0,5.11,185,LW,London Knights,37,3,10,13,0.35,10,0,0,0,0,50,0,0.0,-19.0
 Brennan Faulkner,NO,28,,2005.0,5.11,176,LW,Peterborough Petes,42,3,10,13,0.31,2,0,0,0,0,28,0,0.0,-5.0
-Kohyn Eshkawkogan,YES,19,,2008.0,5.10,164,D,Ottawa 67's,39,2,11,13,0.33,-3,1,3,0,0,24,4,30.8,-6.5
+Kohyn Eshkawkogan,YES,19,,2008.0,5.10,164,D,Ottawa 67's,39,2,11,13,0.33,-2,1,3,0,0,24,4,30.8,-5.5
 Andrew Wycisk,NO,75,,2005.0,5.11,170,D,Niagara IceDogs,39,2,11,13,0.33,-1,0,3,1,0,14,3,23.1,5.5
 Caden Kelly,NO,28,,2006.0,5.11,197,RW,Ottawa 67's,41,9,3,12,0.29,-8,0,0,1,1,31,0,0.0,-16.5
 Grayson Tiller,NO,8,,2005.0,5.10,193,D,Barrie Colts,43,7,5,12,0.28,0,0,0,1,0,52,0,0.0,-30.5
@@ -317,10 +317,10 @@ Charlie Hilton,NO,20,,2006.0,6.05,212,LW,Soo Greyhounds,37,2,5,7,0.19,-8,0,1,0,0
 Grayden Strohack,NO,6,,2006.0,6.04,198,D,Peterborough Petes,40,1,6,7,0.18,-7,0,0,0,0,64,0,0.0,-60.0
 Erik Muxlow,YES,22,,2007.0,5.10.,183,LW,Soo Greyhounds,41,1,6,7,0.17,-14,0,0,0,0,6,0,0.0,-9.0
 Reed Gee,NO,8,,2006.0,6.00,185,D,Brampton Steelheads,38,0,7,7,0.18,7,0,0,0,0,69,0,0.0,-51.5
-Nolan Jackson,YES,27,,2007.0,6.01,180,D,Ottawa 67's,41,0,7,7,0.17,0,0,0,0,0,15,0,0.0,-4.5
+Nolan Jackson,YES,27,,2007.0,6.01,180,D,Ottawa 67's,41,0,7,7,0.17,1,0,0,0,0,15,0,0.0,-3.5
 Elliot Arnett,YES,4,,2008.0,6.01,189,LD,Owen Sound Attack,42,0,7,7,0.17,-9,0,0,0,0,26,0,0.0,-24.5
 Callum Cheynowski,NO,7,,2006.0,6.00,197,D,Niagara IceDogs,45,0,7,7,0.16,-12,0,1,0,0,28,1,14.3,-29.5
-Chase Yanni,YES,16,,2007.0,5.11,183,LW,Ottawa 67's,39,4,2,6,0.15,-16,0,0,1,0,32,0,0.0,-37.0
+Chase Yanni,YES,16,,2007.0,5.11,183,LW,Ottawa 67's,40,4,2,6,0.15,-16,0,0,1,0,32,0,0.0,-37.0
 Cameron Arquette,YES,11,,2007.0,5.08,170,RW,Kitchener Rangers,30,3,3,6,0.2,-2,0,0,0,0,9,0,0.0,-0.5
 Brody Partridge,NO,11,,2006.0,5.11,193,C,Peterborough Petes,36,3,3,6,0.17,-9,0,0,0,0,6,0,0.0,-4.5
 Nathan Amidovski,YES,26,,2008.0,6.02,171,LW,Ottawa 67's,38,3,3,6,0.16,-10,0,0,0,0,10,0,0.0,-9.5

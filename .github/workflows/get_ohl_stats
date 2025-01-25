@@ -1,0 +1,68 @@
+name: Run OHL Stats Scraper
+
+on:
+  schedule:
+    - cron: "30 9 * * *"  # 4:30 AM EST (9:30 AM UTC)
+    - cron: "0 4 * * *"   # 11:00 PM EST (4:00 AM UTC)
+  workflow_dispatch:
+
+jobs:
+  run_stats_scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Log Start Time
+        run: |
+          echo "Workflow started at: $(date -u)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12.1
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run the Stats Scraper
+        run: |
+          start_time=$(date +%s)
+          python get_ohl_stats.py
+          end_time=$(date +%s)
+          duration=$((end_time - start_time))
+          echo "Workflow runtime: $((duration / 60)) minutes and $((duration % 60)) seconds." >> $GITHUB_STEP_SUMMARY
+
+      - name: Verify CSV File Exists
+        run: |
+          if [ ! -f "LeagueStats_2024_2025.csv" ]; then
+            echo "Error: CSV file not generated!";
+            exit 1;
+          fi
+
+      - name: Move New CSV to Folder
+        run: |
+          mkdir -p OHL_STATS
+          mv LeagueStats_2024_2025.csv OHL_STATS/
+
+      - name: Check for Changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes in OHL Stats. Exiting Successfully..." >> $GITHUB_STEP_SUMMARY
+            exit 0;
+          else
+            echo "Changes detected in OHL Stats. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
+            git diff --stat >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add OHL_STATS/LeagueStats_2024_2025.csv
+          git commit -m "Automated update: OHL Stats CSV"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

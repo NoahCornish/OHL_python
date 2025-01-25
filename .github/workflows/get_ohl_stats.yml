@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  fetch_stats:
+  run_stats_scraper:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,7 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Fetch Stats
+      - name: Run the Stats Scraper
         run: |
           start_time=$(date +%s)
           python get_ohl_stats.py

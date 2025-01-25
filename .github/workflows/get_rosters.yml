@@ -1,0 +1,49 @@
+name: Run OHL Roster Scraper
+
+on:
+  schedule:
+    # Run daily at 19:40 UTC (14:40 Toronto time during EST)
+    - cron: "40 19 * * *"
+
+jobs:
+  run_roster_scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.13.1  # Adjust this to match your Python version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # Step 4: Run the Python script
+      - name: Run the Roster Scraper
+        run: |
+          python get_rosters.py
+
+      # Step 5: Move the generated CSV to the target folder
+      - name: Move CSV to Folder
+        run: |
+          mkdir -p OHL_ROSTERS_TEST
+          mv OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_TEST/
+
+      # Step 6: Commit and push changes back to the repository
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add OHL_ROSTERS_TEST/OHL_ROSTERS_2024_2025.csv
+          git commit -m "Automated update: OHL Rosters CSV"
+          git push
+        env:
+          # Provide write permissions for the GitHub token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

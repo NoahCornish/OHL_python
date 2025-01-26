@@ -26,7 +26,7 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Run the Stats Scraper
+      - name: Fetch Stats
         run: |
           start_time=$(date +%s)
           python get_ohl_stats.py

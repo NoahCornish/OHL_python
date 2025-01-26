@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run_roster_scraper:
+  fetch_rosters:
     runs-on: ubuntu-latest
 
     steps:

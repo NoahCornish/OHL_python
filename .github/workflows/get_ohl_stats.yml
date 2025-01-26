@@ -3,7 +3,7 @@ name: Get OHL Stats
 on:
   schedule:
     - cron: "30 9 * * *"  # 4:30 AM EST (9:30 AM UTC)
-    - cron: "0 4 * * *"   # 11:00 PM EST (4:00 AM UTC)
+    - cron: "30 3 * * *"   # 10:30 PM EST (3:30 AM UTC)
   workflow_dispatch:
 
 jobs:

@@ -28,7 +28,7 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Run the Roster Scraper
+      - name: Get Rosters
         run: |
           start_time=$(date +%s)
           python get_rosters.py > scraper_log.txt 2>&1

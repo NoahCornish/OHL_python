@@ -52,7 +52,7 @@ jobs:
         run: |
           if git status --porcelain | grep "docs/OHL_STATS"; then
             echo "changes_detected=true" >> $GITHUB_ENV
-            echo "CHANGES DETECTED IN docs/OHL_STATS. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
+            echo "CHANGES DETECTECTED IN docs/OHL_STATS. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
           else
             echo "changes_detected=false" >> $GITHUB_ENV
             echo "NO CHANGES IN docs/OHL_STATS. Workflow exiting successfully." >> $GITHUB_STEP_SUMMARY
@@ -68,4 +68,3 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

@@ -22,6 +22,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
   flex-wrap: wrap;
 }
 
@@ -106,11 +107,13 @@ body {
 .hero h1 {
   font-size: 2rem;
   margin: 0;
+  line-height: 1.4;
 }
 
 .hero p {
   font-size: 1rem;
   margin-top: 0.5rem;
+  line-height: 1.6;
 }
 
 /* Card Layout */
@@ -254,6 +257,17 @@ footer {
   .dropdown-menu {
     position: static;
     box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .dropdown-menu li a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .hero {
+    padding: 1.5rem 1rem;
   }
 
   .hero h1 {

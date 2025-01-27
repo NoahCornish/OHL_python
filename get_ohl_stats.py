@@ -1,6 +1,6 @@
 import pandas as pd
 import requests
-import json
+import os
 from datetime import datetime
 
 def fetch_json_data(url):
@@ -51,5 +51,19 @@ LeagueStats_2024['Rookie'] = LeagueStats_2024['Rookie'].replace({1: 'YES', 0: 'N
 LeagueStats_2024['RNK'] = (2 * LeagueStats_2024['G']) + (1.5 * LeagueStats_2024['A']) + \
                           (1 * LeagueStats_2024['+/-']) - (1 * LeagueStats_2024['PIM'])
 
-# Save to CSV
-LeagueStats_2024.to_csv("LeagueStats_2024_2025.csv", index=False)
+# Create an output directory for team-specific files
+output_dir = "LEAGUE STATS 2024-2025"
+os.makedirs(output_dir, exist_ok=True)
+
+# Save the overall league stats as a CSV file
+overall_file_path = os.path.join(output_dir, "LeagueStats_2024_2025.csv")
+LeagueStats_2024.to_csv(overall_file_path, index=False)
+
+# Save stats for each team in separate files
+teams = LeagueStats_2024['Team'].unique()
+for team in teams:
+    team_df = LeagueStats_2024[LeagueStats_2024['Team'] == team]
+    team_file_path = os.path.join(output_dir, f"{team.replace(' ', '_')}.csv")
+    team_df.to_csv(team_file_path, index=False)
+
+print(f"League stats and individual team stats saved in '{output_dir}' folder.")

@@ -3,7 +3,7 @@ name: Update Web
 on:
   schedule:
     - cron: "45 9 * * *"  # 4:45 AM EST (9:45 AM UTC)
-   - cron: "00 21 * * *"
+   - cron:  "00 21 * * *"
     - cron: "45 3 * * *"  # 10:45 PM EST (3:45 AM UTC)
   workflow_dispatch:
 

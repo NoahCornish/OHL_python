@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const statsFilePath = "LeagueStats_2024_2025.csv";
+    const statsFilePath = "OHL_STATS/LeagueStats_2024_2025.csv";
     const rostersFilePath = "OHL_ROSTERS_2024_2025.csv";
   
     const teamFilter = document.getElementById("team-filter");

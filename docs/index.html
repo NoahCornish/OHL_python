@@ -7,17 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-container">
-      <a href="index.html" class="nav-logo">Inside the O</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="player-stats.html">Player Stats</a></li>
-        <li><a href="team-stats.html">Team Stats</a></li>
-        <!-- <li><a href="prediction.html">Prediction Algorithm</a></li> -->
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar">
+        <div class="navbar-container">
+          <a href="index.html" class="nav-logo">Inside the O</a>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Stats</a>
+              <ul class="dropdown-menu">
+                <li><a href="player-stats.html">Player Stats</a></li>
+                <li><a href="team-stats.html">Team Stats</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>  
+      
   <header class="hero">
     <h1>Welcome to Inside the O</h1>
     <p>Your premier resource for in-depth OHL statistics, team insights, and cutting-edge predictions.</p>

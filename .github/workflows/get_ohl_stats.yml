@@ -2,8 +2,8 @@ name: Get OHL Stats
 
 on:
   schedule:
-    - cron: "30 9 * * *"  # 4:30 AM EST (9:30 AM UTC) - should be updated by 0500 EST
-    - cron: "30 3 * * *"  # 10:30 PM EST (3:30 AM UTC) - should be updated by 2300 EST
+    - cron: "30 9 * * *"  # 4:30 AM EST (9:30 AM UTC) # should be updated by 0500 EST
+    - cron: "30 3 * * *"  # 10:30 PM EST (3:30 AM UTC) # should be updated by 2300 EST
   workflow_dispatch:
 
 jobs:
@@ -30,7 +30,6 @@ jobs:
         run: |
           start_time=$(date +%s)
           python get_ohl_stats.py
-          cp OHL_STATS/LeagueStats_2024_2025.csv docs/LeagueStats_2024_2025.csv
           end_time=$(date +%s)
           duration=$((end_time - start_time))
           echo "Workflow runtime: $((duration / 60)) minutes and $((duration % 60)) seconds." >> $GITHUB_STEP_SUMMARY
@@ -39,10 +38,6 @@ jobs:
         run: |
           if [ ! -d "OHL_STATS" ]; then
             echo "Error: Output folder not generated!";
-            exit 1;
-          fi
-          if [ ! -f "docs/LeagueStats_2024_2025.csv" ]; then
-            echo "Error: File was not copied to docs folder!";
             exit 1;
           fi
 
@@ -63,7 +58,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add "OHL_STATS/*" "docs/LeagueStats_2024_2025.csv"
+          git add "OHL_STATS/*"
           git commit -m "Automated update: OHL Stats CSVs"
           git push
         env:

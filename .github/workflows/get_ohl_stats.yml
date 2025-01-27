@@ -2,8 +2,8 @@ name: Get OHL Stats
 
 on:
   schedule:
-    - cron: "30 9 * * *"  # 4:30 AM EST (9:30 AM UTC)
-    - cron: "30 3 * * *"  # 10:30 PM EST (3:30 AM UTC)
+    - cron: "30 9 * * *"  # 4:30 AM EST (9:30 AM UTC) # should be updated by 0500 EST
+    - cron: "30 3 * * *"  # 10:30 PM EST (3:30 AM UTC) # should be updated by 2300 EST
   workflow_dispatch:
 
 jobs:
@@ -42,16 +42,19 @@ jobs:
           fi
 
       - name: Check for Changes
+        id: check_changes
         run: |
           if git diff --quiet; then
-            echo "No changes in OHL_STATS. Exiting Successfully..." >> $GITHUB_STEP_SUMMARY
-            exit 0;
+            echo "changes_detected=false" >> $GITHUB_ENV
+            echo "NO CHANGES IN OHL STATS. Workflow exiting successfully." >> $GITHUB_STEP_SUMMARY
           else
-            echo "Changes detected in OHL_STATS. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
+            echo "changes_detected=true" >> $GITHUB_ENV
+            echo "CHANGES DETECTED IN OHL STATS. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
             git diff --stat >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: Commit and Push Changes
+        if: env.changes_detected == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -60,3 +63,4 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

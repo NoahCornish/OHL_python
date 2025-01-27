@@ -52,7 +52,7 @@ LeagueStats_2024['RNK'] = (2 * LeagueStats_2024['G']) + (1.5 * LeagueStats_2024[
                           (1 * LeagueStats_2024['+/-']) - (1 * LeagueStats_2024['PIM'])
 
 # Create an output directory for team-specific files
-output_dir = "LEAGUE STATS 2024-2025"
+output_dir = "OHL STATS"
 os.makedirs(output_dir, exist_ok=True)
 
 # Save the overall league stats as a CSV file

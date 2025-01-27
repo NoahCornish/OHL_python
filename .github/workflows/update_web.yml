@@ -1,5 +1,4 @@
-name: Get OHL Stats
-
+name: Update Web
 on:
   schedule:
     - cron: "45 9 * * *"  # 4:45 AM EST (9:45 AM UTC)

@@ -36,23 +36,18 @@ jobs:
 
       - name: Verify Folder Exists
         run: |
-          if [ ! -d "LEAGUE STATS 2024-2025" ]; then
+          if [ ! -d "OHL STATS" ]; then
             echo "Error: Output folder not generated!";
             exit 1;
           fi
 
-      - name: Move Folder into Repository
-        run: |
-          mkdir -p LEAGUE_STATS
-          mv "LEAGUE STATS 2024-2025" LEAGUE_STATS/
-
       - name: Check for Changes
         run: |
           if git diff --quiet; then
-            echo "No changes in LEAGUE STATS. Exiting Successfully..." >> $GITHUB_STEP_SUMMARY
+            echo "No changes in OHL STATS. Exiting Successfully..." >> $GITHUB_STEP_SUMMARY
             exit 0;
           else
-            echo "Changes detected in LEAGUE STATS. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
+            echo "Changes detected in OHL STATS. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
             git diff --stat >> $GITHUB_STEP_SUMMARY
           fi
 
@@ -60,11 +55,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add LEAGUE_STATS/LEAGUE\ STATS\ 2024-2025/*
-          git commit -m "Automated update: LEAGUE STATS CSVs"
+          git add "OHL STATS/*"
+          git commit -m "Automated update: OHL Stats CSVs"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-

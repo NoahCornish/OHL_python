@@ -51,13 +51,20 @@ LeagueStats_2024['Rookie'] = LeagueStats_2024['Rookie'].replace({1: 'YES', 0: 'N
 LeagueStats_2024['RNK'] = (2 * LeagueStats_2024['G']) + (1.5 * LeagueStats_2024['A']) + \
                           (1 * LeagueStats_2024['+/-']) - (1 * LeagueStats_2024['PIM'])
 
-# Create an output directory for team-specific files
+# Create output directories for team-specific files
 output_dir = "OHL_STATS"
 os.makedirs(output_dir, exist_ok=True)
 
-# Save the overall league stats as a CSV file
-overall_file_path = os.path.join(output_dir, "LeagueStats_2024_2025.csv")
-LeagueStats_2024.to_csv(overall_file_path, index=False)
+o_output_dir = "docs/OHL_STATS"
+os.makedirs(o_output_dir, exist_ok=True)  # Ensure the correct directory is created
+
+# Save the overall league stats as a CSV file in both directories
+overall_file_path_1 = os.path.join(output_dir, "LeagueStats_2024_2025.csv")
+LeagueStats_2024.to_csv(overall_file_path_1, index=False)
+
+overall_file_path_2 = os.path.join(o_output_dir, "LeagueStats_2024_2025.csv")
+LeagueStats_2024.to_csv(overall_file_path_2, index=False)
+
 
 # Save stats for each team in separate files
 teams = LeagueStats_2024['Team'].unique()

@@ -2,8 +2,8 @@ name: Get OHL Stats
 
 on:
   schedule:
-    - cron: "30 9 * * *"  # 4:30 AM EST (9:30 AM UTC) # should be updated by 0500 EST
-    - cron: "30 3 * * *"  # 10:30 PM EST (3:30 AM UTC) # should be updated by 2300 EST
+    - cron: "30 9 * * *"  # 4:30 AM EST (9:30 AM UTC)
+    - cron: "30 3 * * *"  # 10:30 PM EST (3:30 AM UTC)
   workflow_dispatch:
 
 jobs:
@@ -44,13 +44,12 @@ jobs:
       - name: Check for Changes
         id: check_changes
         run: |
-          if git diff --quiet; then
-            echo "changes_detected=false" >> $GITHUB_ENV
-            echo "NO CHANGES IN OHL STATS. Workflow exiting successfully." >> $GITHUB_STEP_SUMMARY
-          else
+          if git status --porcelain | grep "OHL_STATS"; then
             echo "changes_detected=true" >> $GITHUB_ENV
             echo "CHANGES DETECTED IN OHL STATS. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
-            git diff --stat >> $GITHUB_STEP_SUMMARY
+          else
+            echo "changes_detected=false" >> $GITHUB_ENV
+            echo "NO CHANGES IN OHL STATS. Workflow exiting successfully." >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: Commit and Push Changes

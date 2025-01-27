@@ -1,177 +1,135 @@
 /* General Styles */
 body {
   font-family: "Arial", sans-serif;
-  line-height: 1.6;
   margin: 0;
   padding: 0;
   background-color: #f7f8fc;
   color: #333;
+  line-height: 1.6;
 }
 
 /* Navigation Bar */
 .navbar {
-  background: #004085;
+  background-color: #004085;
   color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .nav-logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
   text-decoration: none;
+  color: white;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 500;
 }
 
-.nav-links a.active {
-  font-weight: bold;
+.nav-links a:hover {
   text-decoration: underline;
-}
-
-/* Dropdown Menu */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-toggle {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #0056b3;
-  padding: 0.5rem 0;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  z-index: 1000;
-  min-width: 150px;
-}
-
-.dropdown-menu li {
-  margin: 0;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: white;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.dropdown-menu li a:hover {
-  background: #003366;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
 }
 
 /* Hero Section */
 .hero {
-  text-align: center;
   background: linear-gradient(to right, #004085, #007bff);
   color: white;
-  padding: 2rem 1rem;
+  text-align: center;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0;
-  line-height: 1.4;
 }
 
 .hero p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
-  line-height: 1.6;
 }
 
-/* Card Layout */
-.card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  margin: 1rem;
-  border: 1px solid #e0e0e0;
+/* Main Content */
+.content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.card h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
+.content h2 {
+  font-size: 1.8rem;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
-.card p {
-  font-size: 1rem;
-  margin: 0.5rem 0;
+.content p {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* Player Filter Section */
+/* Filters */
 .filters-container {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
-}
-
-.filter-group {
-  width: 100%;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 #team-filter,
 #player-search {
-  width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-/* Player Card Grid */
+/* Player List */
+/* Player List */
+/* Player List */
 .player-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(5, 1fr); /* 5 cards per row */
+  gap: 2rem; /* Space between cards */
+  padding: 2rem; /* Padding around the grid */
+  justify-items: center; /* Center items horizontally in their columns */
 }
 
 .player-card {
-  background: #fff;
+  background: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   text-align: center;
-  transition: transform 0.2s ease-in-out;
+  width: 100%; /* Ensure it spans its column */
+  max-width: 200px; /* Optional: Restrict max size for consistency */
+  transition: transform 0.3s ease-in-out;
 }
 
 .player-card:hover {
@@ -179,58 +137,36 @@ body {
 }
 
 .player-photo {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   margin-bottom: 1rem;
 }
 
-.player-info p {
-  margin: 0.5rem 0;
+
+
+.player-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.player-info button {
+.player-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.player-card button {
   background: #004085;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 0.5rem 1rem;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 1rem;
-  margin-top: 0.5rem;
 }
 
-.player-info button:hover {
+.player-card button:hover {
   background: #003366;
-}
-
-/* Player Details */
-.player-details-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.player-photo-large {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-
-.player-stats-section h3 {
-  font-size: 1.5rem;
-}
-
-.player-stats-section p {
-  font-size: 1rem;
-  margin: 0.5rem 0;
 }
 
 /* Footer */
@@ -239,64 +175,36 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* Centering Content */
+.hero, main, footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar-container {
     flex-direction: column;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background: transparent;
-    padding: 0;
-  }
-
-  .dropdown-menu li a {
-    font-size: 1rem;
-    padding: 0.5rem 0;
-  }
-
-  .hero {
-    padding: 1.5rem 1rem;
+    text-align: center;
   }
 
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .hero p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
-  .player-card {
-    padding: 0.75rem;
+  .player-list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
 
-  .player-photo {
-    width: 80px;
-    height: 80px;
-  }
-
-  .player-photo-large {
-    width: 120px;
-    height: 120px;
-  }
-
-  .player-stats-section h3 {
-    font-size: 1.2rem;
-  }
-
-  .player-stats-section p {
-    font-size: 0.9rem;
-  }
+  
 }

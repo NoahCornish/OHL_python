@@ -91,35 +91,101 @@ document.addEventListener("DOMContentLoaded", async () => {
       
   
     // Display detailed stats for a specific player
-    function viewPlayerDetails(playerName) {
-        const playerStats = statsData.find((p) => p["Name"] === playerName);
-        const playerRoster = rosterData.find((p) => p["full_name"] === playerName);
-      
-        if (!playerStats || !playerRoster) {
-          statsDisplay.innerHTML = `<p>Player stats not found.</p>`;
-          return;
-        }
-      
-        const playerId = playerRoster["player_id"];
-        const playerImage = `https://assets.leaguestat.com/ohl/240x240/${playerId}.jpg`;
-      
-        statsDisplay.innerHTML = `
-          <div class="player-details-box">
+    // Function to display player stats when "Get Stats" is clicked
+function viewPlayerDetails(playerName) {
+    const playerStats = statsData.find((p) => p["Name"] === playerName);
+    const playerRoster = rosterData.find((p) => p["full_name"] === playerName);
+
+    const playerDetails = document.getElementById("stats-display");
+    const backButtonContainer = document.getElementById("back-button-container");
+    const playerList = document.querySelector(".player-list");
+
+    if (!playerStats || !playerRoster) {
+        playerDetails.innerHTML = `<p>Player stats not found.</p>`;
+        return;
+    }
+
+    const playerId = playerRoster["player_id"];
+    const playerImage = `https://assets.leaguestat.com/ohl/240x240/${playerId}.jpg`;
+
+    playerDetails.innerHTML = `
+        <div class="player-details-box">
             <div class="player-photo-section">
-              <img src="${playerImage}" alt="${playerName}" class="player-photo-large" onerror="this.src=''; this.alt='No photo available';">
+                <img src="${playerImage}" alt="${playerName}" class="player-photo-large" onerror="this.src=''; this.alt='No photo available';">
             </div>
             <div class="player-stats-section">
-              <h3>${playerName}</h3>
-              <p><strong>Team:</strong> ${playerRoster["team_name"]}</p>
-              <p><strong>Games Played:</strong> ${playerStats["GP"]}</p>
-              <p><strong>Goals:</strong> ${playerStats["G"]}</p>
-              <p><strong>Assists:</strong> ${playerStats["A"]}</p>
-              <p><strong>Points:</strong> ${playerStats["PTS"]}</p>
-              <p><strong>Position:</strong> ${playerRoster["pos"]}</p>
+                <h3>${playerName}</h3>
+                <p><strong>Team:</strong> ${playerRoster["team_name"]}</p>
+                <p><strong>Games Played:</strong> ${playerStats["GP"]}</p>
+                <p><strong>Goals:</strong> ${playerStats["G"]}</p>
+                <p><strong>Assists:</strong> ${playerStats["A"]}</p>
+                <p><strong>Points:</strong> ${playerStats["PTS"]}</p>
+                <p><strong>Position:</strong> ${playerRoster["pos"]}</p>
             </div>
-          </div>
+        </div>
+    `;
+
+    // Hide the team player list and show the back button
+    playerList.style.display = "none";
+    backButtonContainer.style.display = "block";
+}
+
+// Function to go back to the full team player list
+function showTeamPlayers() {
+    const playerDetails = document.getElementById("stats-display");
+    const backButtonContainer = document.getElementById("back-button-container");
+    const playerList = document.querySelector(".player-list");
+
+    // Clear the player details, hide the back button, and show the team player list
+    playerDetails.innerHTML = "";
+    backButtonContainer.style.display = "none";
+    playerList.style.display = "grid";
+
+    // Reload the player list for the currently selected team
+    const selectedTeam = document.getElementById("team-filter").value;
+    if (selectedTeam) {
+        filterPlayersByTeam(selectedTeam);
+    }
+}
+
+// Function to filter players by team
+function filterPlayersByTeam(teamName) {
+    const playerList = document.querySelector(".player-list");
+    const noResults = document.getElementById("no-results");
+
+    // Clear existing players
+    playerList.innerHTML = "";
+
+    // Filter players based on the selected team
+    const filteredPlayers = rosterData.filter((player) => player["team_name"] === teamName);
+
+    if (filteredPlayers.length === 0) {
+        noResults.style.display = "block";
+        playerList.style.display = "none";
+        return;
+    }
+
+    noResults.style.display = "none";
+    playerList.style.display = "grid";
+
+    // Populate the player list
+    filteredPlayers.forEach((player) => {
+        const playerCard = document.createElement("div");
+        playerCard.classList.add("player-card");
+        playerCard.innerHTML = `
+            <img src="https://assets.leaguestat.com/ohl/240x240/${player["player_id"]}.jpg" alt="${player["full_name"]}" class="player-photo" onerror="this.src=''; this.alt='No photo available';">
+            <p class="player-name">${player["full_name"]}</p>
+            <p class="player-info">Position: ${player["pos"]}</p>
+            <button onclick="viewPlayerDetails('${player["full_name"]}')">Get Stats</button>
         `;
-      }
+        playerList.appendChild(playerCard);
+    });
+}
+
+// Add event listener to the back button
+document.getElementById("back-button").addEventListener("click", showTeamPlayers);
+
+
       
       
   
@@ -134,6 +200,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       playerSearch.addEventListener("input", filterPlayers);
     }
   
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        if (mobileMenu.style.display === "flex") {
+          mobileMenu.style.display = "none";
+        } else {
+          mobileMenu.style.display = "flex";
+        }
+      }
+      
+
     init();
   });
   

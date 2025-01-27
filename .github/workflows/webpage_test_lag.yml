@@ -2,7 +2,7 @@ name: Update Web Randomized
 
 on:
   schedule:
-    - cron: "*/20 * * * *"  # Runs every 20 minutes
+    - cron: "*/1 * * * *"  # Runs every 1 minute
   workflow_dispatch:
 
 jobs:

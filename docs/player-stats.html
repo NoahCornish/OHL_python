@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inside the O - Player Stats</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-logo">Inside the O</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="player-stats.html" class="active">Player Stats</a></li>
+        <li><a href="team-stats.html">Team Stats</a></li>
+        <li><a href="prediction.html">Prediction Algorithm</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Player Statistics</h1>
+    <p>Explore detailed stats for players in the 2024-2025 OHL season.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Filter and Search Section -->
+    <section id="filters" class="card">
+      <h2>Filter Players</h2>
+      <div class="filters-container">
+        <div class="filter-group">
+          <label for="team-filter">Select a Team:</label>
+          <select id="team-filter">
+            <option value="">-- All Teams --</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="player-search">Search Player Name:</label>
+          <input type="text" id="player-search" placeholder="Type to search...">
+        </div>
+      </div>
+    </section>
+
+    <!-- Player Details Section -->
+    <section id="player-details" class="card">
+      <h2>Player Details</h2>
+      <div id="stats-display" class="player-stats-display">
+        <p>Select a team and player or search by name to view stats.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Inside the O. All rights reserved. Data updated automatically with GitHub Actions.</p>
+  </footer>
+
+  <script src="player.js"></script>
+</body>
+</html>

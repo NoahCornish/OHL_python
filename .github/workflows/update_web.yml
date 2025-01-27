@@ -1,4 +1,5 @@
 name: Update Web
+
 on:
   schedule:
     - cron: "45 9 * * *"  # 4:45 AM EST (9:45 AM UTC)
@@ -28,15 +29,20 @@ jobs:
       - name: Fetch Stats
         run: |
           start_time=$(date +%s)
-          mkdir -p docs/ohl_stats  # Ensure the target directory exists
-          python get_ohl_stats.py --output docs/ohl_stats  # Adjust script to accept an output directory parameter
+          mkdir -p docs/OHL_STATS  # Ensure the target directory exists
+          python get_ohl_stats.py
           end_time=$(date +%s)
           duration=$((end_time - start_time))
           echo "Workflow runtime: $((duration / 60)) minutes and $((duration % 60)) seconds." >> $GITHUB_STEP_SUMMARY
 
+      - name: Debug: List Contents of docs/OHL_STATS
+        run: |
+          echo "Checking contents of docs/OHL_STATS:"
+          ls -la docs/OHL_STATS
+
       - name: Verify Folder Exists
         run: |
-          if [ ! -d "docs/ohl_stats" ]; then
+          if [ ! -d "docs/OHL_STATS" ]; then
             echo "Error: Output folder not generated!";
             exit 1;
           fi
@@ -44,12 +50,12 @@ jobs:
       - name: Check for Changes
         id: check_changes
         run: |
-          if git status --porcelain | grep "docs/ohl_stats"; then
+          if git status --porcelain | grep "docs/OHL_STATS"; then
             echo "changes_detected=true" >> $GITHUB_ENV
-            echo "CHANGES DETECTED IN docs/ohl_stats. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
+            echo "CHANGES DETECTED IN docs/OHL_STATS. Preparing to commit these..." >> $GITHUB_STEP_SUMMARY
           else
             echo "changes_detected=false" >> $GITHUB_ENV
-            echo "NO CHANGES IN docs/ohl_stats. Workflow exiting successfully." >> $GITHUB_STEP_SUMMARY
+            echo "NO CHANGES IN docs/OHL_STATS. Workflow exiting successfully." >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: Commit and Push Changes
@@ -57,8 +63,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add "docs/ohl_stats/*"
+          git add docs/OHL_STATS/*
           git commit -m "Automated update: OHL Stats CSVs"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

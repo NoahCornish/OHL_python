@@ -1,0 +1,29 @@
+Game Prediction Report: Owen Sound Attack vs Erie Otters
+Prediction: Erie Otters is more likely to win.
+Odds: Owen Sound Attack: +206, Erie Otters: -148
+
+Most Likely Scenarios for Home Team Winning:
+  2.0 - 1.0: 2.86% (2858.0 simulations)
+  3.0 - 2.0: 2.77% (2767.0 simulations)
+  3.0 - 1.0: 1.62% (1616.0 simulations)
+
+Most Likely Scenarios for Away Team Winning:
+  3.0 - 1.0: 7.01% (7010.0 simulations)
+  2.0 - 1.0: 6.18% (6182.0 simulations)
+  4.0 - 1.0: 5.94% (5938.0 simulations)
+
+Shutout Probabilities:
+  Owen Sound Attack shuts out Erie Otters: 2.78%
+  Erie Otters shuts out Owen Sound Attack: 19.01%
+
+Top Players for Owen Sound Attack:
+           Name Pos  GP  G  A  GoalProb  AssistProb
+  Landen Hookey  RW  45 19 23      42.2        51.1
+   Pierce Mbuyi  LW  40 14 10      35.0        25.0
+Tristan Delisle   C  42  7 16      16.7        38.1
+
+Top Players for Erie Otters:
+          Name Pos  GP  G  A  GoalProb  AssistProb
+    Sam Alfano  RW  43 28 27      65.1        62.8
+    Pano Fimis   C  43 19 36      44.2        83.7
+Malcolm Spence  LW  42 19 29      45.2        69.0

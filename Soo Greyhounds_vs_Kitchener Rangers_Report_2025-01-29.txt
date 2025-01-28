@@ -1,0 +1,29 @@
+Game Prediction Report: Soo Greyhounds vs Kitchener Rangers
+Prediction: Kitchener Rangers is more likely to win.
+Odds: Soo Greyhounds: +187, Kitchener Rangers: -153
+
+Most Likely Scenarios for Home Team Winning:
+  2.0 - 1.0: 3.34% (3338.0 simulations)
+  3.0 - 2.0: 3.22% (3218.0 simulations)
+  3.0 - 1.0: 2.02% (2015.0 simulations)
+
+Most Likely Scenarios for Away Team Winning:
+  3.0 - 1.0: 6.84% (6836.0 simulations)
+  2.0 - 1.0: 6.27% (6273.0 simulations)
+  3.0 - 2.0: 5.85% (5849.0 simulations)
+
+Shutout Probabilities:
+  Soo Greyhounds shuts out Kitchener Rangers: 3.13%
+  Kitchener Rangers shuts out Soo Greyhounds: 16.74%
+
+Top Players for Soo Greyhounds:
+           Name Pos  GP  G  A  GoalProb  AssistProb
+  Marco Mignosa  RW  35 18 24      51.4        68.6
+Justin Cloutier  RW  45 23 17      51.1        37.8
+   Brady Martin   C  35 16 17      45.7        48.6
+
+Top Players for Kitchener Rangers:
+             Name Pos  GP  G  A  GoalProb  AssistProb
+Adrian Misaljevic  RW  46 23 24      50.0        52.2
+      Trent Swick  LW  41 19 23      46.3        56.1
+     Cameron Reid  LD  46  8 29      17.4        63.0

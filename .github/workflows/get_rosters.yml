@@ -45,16 +45,16 @@ jobs:
 
       - name: Archive Old CSV
         run: |
-          mkdir -p OHL_ROSTERS_ARCHIVE
-          if [ -f OHL_ROSTERS/OHL_ROSTERS_2024_2025.csv ]; then
+          mkdir -p docs/OHL_ROSTERS_ARCHIVE
+          if [ -f docs/OHL_ROSTERS/OHL_ROSTERS_2024_2025.csv ]; then
             timestamp=$(date +%Y%m%d_%H%M%S)
-            mv OHL_ROSTERS/OHL_ROSTERS_2024_2025.csv OHL_ROSTERS_ARCHIVE/OHL_ROSTERS_2024_2025_${timestamp}.csv
+            mv docs/OHL_ROSTERS/OHL_ROSTERS_2024_2025.csv docs/OHL_ROSTERS_ARCHIVE/OHL_ROSTERS_2024_2025_${timestamp}.csv
           fi
 
       - name: Move New CSV to Folder
         run: |
-          mkdir -p OHL_ROSTERS
-          mv OHL_ROSTERS_2024_2025.csv OHL_ROSTERS/
+          mkdir -p docs/OHL_ROSTERS
+          mv OHL_ROSTERS_2024_2025.csv docs/OHL_ROSTERS/
 
       - name: Check for Changes
         run: |
@@ -70,10 +70,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add OHL_ROSTERS/OHL_ROSTERS_2024_2025.csv
-          git add OHL_ROSTERS_ARCHIVE/
+          git add docs/OHL_ROSTERS/OHL_ROSTERS_2024_2025.csv
+          git add docs/OHL_ROSTERS_ARCHIVE/
           git commit -m "Automated update: OHL Rosters CSV and archive"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

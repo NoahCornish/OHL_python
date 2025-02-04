@@ -1,7 +1,7 @@
 Name,Rookie,JN,BD,BD_Y,Hgt,Wgt,Pos,Team,GP,G,A,PTS,Pts/G,+/-,PPG,PPA,GWG,ENG,PIM,PPP,PPP_Percentage,RNK
 Michael Misa,NO,77,,2007.0,6.01,185,C,Saginaw Spirit,44,40,48,88,2.0,33,11,18,6,1,31,29,33.0,154.0
 Nick Lardis,NO,16,,2005.0,5.11,185,RW,Brantford Bulldogs,47,48,33,81,1.72,13,15,14,8,6,16,29,35.8,142.5
-Liam Greentree,NO,66,,2006.0,6.03,216,LW,Windsor Spitfires,47,33,46,79,1.68,36,8,16,5,7,34,24,30.4,137.0
+Liam Greentree,NO,66,,2006.0,6.03,216,LW,Windsor Spitfires,47,33,47,80,1.7,36,8,16,5,7,34,24,30.0,138.5
 Ilya Protas,NO,37,,2006.0,6.05,200,C,Windsor Spitfires,43,34,43,77,1.79,35,11,14,5,1,22,25,32.5,145.5
 Patrick Thomas,NO,93,,2004.0,6.00,178,C,Brantford Bulldogs,49,22,51,73,1.49,9,11,17,6,1,6,28,38.4,123.5
 Kieron Walton,NO,22,,2006.0,6.06,216,LW,Sudbury Wolves,46,28,44,72,1.57,5,11,21,6,1,30,32,44.4,97.0
@@ -65,10 +65,10 @@ Blake Montgomery,NO,47,,2005.0,6.04,195,LW,London Knights,31,19,19,38,1.23,29,1,
 Jacob Cloutier,YES,42,,2007.0,5.10,170,RW,Saginaw Spirit,47,18,20,38,0.81,11,5,1,1,1,35,6,15.8,42.0
 Easton Cowan,NO,7,,2005.0,6.00,185,RW,London Knights,28,17,21,38,1.36,11,5,9,4,2,26,14,36.8,50.5
 Kashawn Aitcheson,NO,77,,2006.0,6.01,198,D,Barrie Colts,45,17,21,38,0.84,13,7,9,4,0,67,16,42.1,11.5
+Anthony Cristoforo,NO,44,,2006.0,6.00,180,D,Windsor Spitfires,47,11,27,38,0.81,35,6,11,3,1,37,17,44.7,60.5
 Finn Harding,NO,7,,2005.0,6.01,206,D,Brampton Steelheads,47,5,33,38,0.81,31,0,7,1,0,55,7,18.4,35.5
 Luca Romano,NO,86,,2007.0,5.11,168,C,Kitchener Rangers,48,17,20,37,0.77,3,6,8,2,0,14,14,37.8,53.0
 Christopher Thibodeau,NO,9,,2005.0,5.10,158,RW,Flint Firebirds,42,15,22,37,0.88,8,3,9,2,2,19,12,32.4,52.0
-Anthony Cristoforo,NO,44,,2006.0,6.00,180,D,Windsor Spitfires,47,11,26,37,0.79,35,6,11,3,1,37,17,45.9,59.0
 Shamar Moses,NO,24,,2007.0,6.01,202,LW,North Bay Battalion,44,10,27,37,0.84,-11,3,17,2,1,31,20,54.1,18.5
 Carson Harmer,YES,13,,2007.0,5.10,185,C,Saginaw Spirit,47,17,19,36,0.77,9,5,3,2,1,15,8,22.2,56.5
 Tanner Lam,NO,37,,2007.0,5.08,140,RW,Kitchener Rangers,48,10,26,36,0.75,12,2,5,1,0,12,7,19.4,59.0
@@ -81,7 +81,7 @@ Jacob Julien,NO,13,,2004.0,6.04,190,C,London Knights,47,9,25,34,0.72,4,3,7,4,0,3
 Braidy Wassilyn,YES,66,,2008.0,5.11,194,C,Niagara IceDogs,42,7,27,34,0.81,-1,4,8,0,0,12,12,35.3,41.5
 Tristan Bertucci,NO,12,,2005.0,6.02,187,D,Barrie Colts,48,5,29,34,0.71,21,2,10,1,1,43,12,35.3,31.5
 Landon Sim,NO,90,,2004.0,5.11,185,LW,London Knights,37,21,12,33,0.89,17,5,2,2,1,70,7,21.2,7.0
-Cole Davis,NO,78,,2006.0,5.10,184,LW,Windsor Spitfires,38,16,17,33,0.87,13,2,3,2,2,28,5,15.2,42.5
+Cole Davis,NO,78,,2006.0,5.10,184,LW,Windsor Spitfires,37,16,17,33,0.89,13,2,3,2,2,28,5,15.2,42.5
 Kaden Pitre,NO,17,,2006.0,6.00,185,C,Flint Firebirds,43,15,18,33,0.77,-7,1,3,3,0,40,4,12.1,10.0
 Gage Heyes,NO,9,,2004.0,6.00,172,RW,Kingston Frontenacs,47,14,19,33,0.7,8,1,2,0,0,42,3,9.1,22.5
 Nathan Aspinall,NO,76,,2006.0,6.07,195,LW,Flint Firebirds,44,13,20,33,0.75,-6,4,6,2,1,30,10,30.3,20.0
@@ -113,11 +113,11 @@ Jack Van Volsen,NO,14,,2006.0,6.02,190,C,Brampton Steelheads,46,13,17,30,0.65,-9
 Mike Levin,NO,16,,2005.0,5.08,158,LW,Niagara IceDogs,42,10,20,30,0.71,-2,1,5,1,1,28,6,20.0,20.0
 Lev Katzin,YES,33,,2007.0,5.8,176,C,Guelph Storm,22,8,22,30,1.36,2,2,9,0,3,8,11,36.7,43.0
 Matthew Mania,NO,19,,2005.0,6.01,190,D,Flint Firebirds,48,5,25,30,0.63,4,2,7,0,0,42,9,30.0,9.5
+Angus MacDonell,NO,17,,2005.0,5.10,185,C,Brampton Steelheads,25,17,12,29,1.16,-1,6,4,1,1,53,10,34.5,-2.0
 Noel Nordh,NO,43,,2005.0,6.02,198,LW,Soo Greyhounds,27,11,18,29,1.07,-5,5,8,1,0,6,13,44.8,38.0
 Alex Kostov,NO,47,,2006.0,6.04,195,RW,Flint Firebirds,48,9,20,29,0.6,0,0,3,1,1,54,3,10.3,-6.0
 Nick DeAngelis,NO,95,,2004.0,6.02,188,D,Sudbury Wolves,46,5,24,29,0.63,0,3,15,0,1,34,18,62.1,12.0
 Matthew Mayich,NO,22,,2004.0,6.02,197,D,Ottawa 67's,46,4,25,29,0.63,-14,1,5,0,0,48,6,20.7,-16.5
-Angus MacDonell,NO,17,,2005.0,5.10,185,C,Brampton Steelheads,25,16,12,28,1.12,-1,5,4,1,1,53,9,32.1,-4.0
 Evan Konyen,NO,91,,2004.0,6.00,180,RW,Flint Firebirds,48,11,17,28,0.58,-12,2,3,0,0,33,5,17.9,2.5
 Zach Wigle,NO,26,,2004.0,6.00,193,C,North Bay Battalion,46,9,19,28,0.61,6,0,2,2,3,4,2,7.1,48.5
 Oliver Bonk,NO,59,,2005.0,6.02,210,D,London Knights,34,8,20,28,0.82,20,2,10,1,0,24,12,42.9,42.0
@@ -134,13 +134,13 @@ Lauri Sinivuori,NO,42,,2006.0,6.01,180,LW,Oshawa Generals,48,12,14,26,0.54,9,1,3
 Dimian Zhilkin,YES,71,,2008.0,5.09,160,RW,Saginaw Spirit,33,8,18,26,0.79,3,2,5,0,0,26,7,26.9,20.0
 Alessandro Di Iorio,YES,17,,2008.0,6.01,175,C,Sarnia Sting,38,8,18,26,0.68,-12,2,9,1,1,6,11,42.3,25.0
 Jimmy Lombardi,NO,10,,2007.0,6.00,178,C,Flint Firebirds,44,7,19,26,0.59,-4,2,5,0,0,25,7,26.9,13.5
-Spencer Sova,NO,22,,2004.0,6.01,190,D,Brampton Steelheads,42,5,21,26,0.62,5,2,8,1,0,22,10,38.5,24.5
 Connor Clattenburg,NO,23,,2005.0,6.02,205,LW,Flint Firebirds,35,13,12,25,0.71,-6,4,2,3,1,86,6,24.0,-48.0
 Caden Taylor,NO,19,,2007.0,6.03,185,LW,Peterborough Petes,48,13,12,25,0.52,-24,4,4,1,0,30,8,32.0,-10.0
 Alex Assadourian,NO,8,,2005.0,5.10,172,C,Niagara IceDogs,24,12,13,25,1.04,12,1,5,2,1,18,6,24.0,37.5
 Colin Fitzgerald,YES,27,,2008.0,6.02,195,C,Peterborough Petes,42,11,14,25,0.6,-13,4,6,1,0,43,10,40.0,-13.0
 Aiden Young,NO,26,,2007.0,5.10,180,C,Peterborough Petes,45,11,14,25,0.56,-3,4,6,1,0,22,10,40.0,18.0
 Gabriel Frasca,NO,86,,2006.0,6.01,180,C,Erie Otters,44,10,15,25,0.57,-12,2,5,0,1,26,7,28.0,4.5
+Spencer Sova,NO,22,,2004.0,6.01,190,D,Brampton Steelheads,42,5,20,25,0.6,5,2,7,1,0,22,9,36.0,23.0
 Owen Protz,NO,12,,2006.0,6.02,207,D,Brantford Bulldogs,48,5,20,25,0.52,5,0,1,2,0,44,1,4.0,1.0
 Beau Akey,NO,86,,2005.0,6.00,183,D,Barrie Colts,37,4,21,25,0.68,14,0,9,0,1,24,9,36.0,29.5
 James Petrovski,NO,28,,2005.0,6.03,190,LD,Owen Sound Attack,48,1,24,25,0.52,-6,0,14,1,0,80,14,56.0,-48.0
@@ -196,8 +196,8 @@ Andrew LeBlanc,NO,27,,2004.0,6.00,183,C,North Bay Battalion,38,8,11,19,0.5,-24,2
 Joshua Avery,YES,86,,2007.0,6.01,170,C,Brantford Bulldogs,44,8,11,19,0.43,2,1,0,0,0,10,1,5.3,24.5
 Jake Crawford,NO,16,,2007.0,6.03,180,C,Owen Sound Attack,46,7,12,19,0.41,-11,1,0,0,0,14,1,5.3,7.0
 Parker Von Richter,NO,6,,2006.0,6.01,195,D,Brampton Steelheads,41,6,13,19,0.46,8,3,2,1,0,14,5,26.3,25.5
-Jakub Fibigr,NO,5,,2006.0,6.00,171,D,Brampton Steelheads,37,4,15,19,0.51,3,2,2,0,0,12,4,21.1,21.5
 Cal Uens,NO,44,,2005.0,5.09,168,D,Kingston Frontenacs,47,4,15,19,0.4,14,0,1,0,0,38,1,5.3,6.5
+Jakub Fibigr,NO,5,,2006.0,6.00,171,D,Brampton Steelheads,37,3,16,19,0.51,3,1,3,0,0,12,4,21.1,21.0
 Lirim Amidovski,NO,29,,2006.0,6.01,175,RW,North Bay Battalion,45,11,7,18,0.4,-17,1,1,4,1,29,2,11.1,-13.5
 Max Crete,YES,23,,2008.0,5.09,182,C,Niagara IceDogs,48,11,7,18,0.38,-13,2,1,1,1,38,3,16.7,-18.5
 Blake Arrowsmith,YES,18,,2007.0,6.01,186,RW,Niagara IceDogs,39,9,9,18,0.46,-2,1,0,1,0,42,1,5.6,-12.5

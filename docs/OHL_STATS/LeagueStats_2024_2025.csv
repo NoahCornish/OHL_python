@@ -21,7 +21,7 @@ Luca Marrelli,NO,19,,2005.0,6.02,185,D,Oshawa Generals,48,16,43,59,1.23,18,4,20,
 Sam Dickinson,NO,3,,2006.0,6.03,210,D,London Knights,36,20,38,58,1.61,35,10,11,4,0,24,21,36.2,108.0
 Andrei Loshko,NO,27,,2004.0,6.02,184,C,Niagara IceDogs,48,28,29,57,1.19,-1,13,8,4,3,19,21,36.8,79.5
 Sam Alfano,NO,33,,2004.0,6.04,204,RW,Erie Otters,46,29,27,56,1.22,11,8,3,2,1,41,11,19.6,68.5
-Pano Fimis,NO,98,,2004.0,5.11,183,C,Erie Otters,46,19,37,56,1.22,15,3,14,2,1,26,17,30.4,82.5
+Pano Fimis,NO,98,,2004.0,5.11,183,C,Erie Otters,47,19,37,56,1.19,15,3,14,2,1,26,17,30.4,82.5
 Kevin He,NO,11,,2006.0,6.00,180,LW,Niagara IceDogs,43,26,29,55,1.28,6,6,8,3,1,20,14,25.5,81.5
 Kristian Epperson,NO,86,,2006.0,6.00,185,LW,Saginaw Spirit,40,19,36,55,1.38,37,4,10,2,2,68,14,25.5,61.0
 Kocha Delic,NO,13,,2004.0,5.11,198,C,Sudbury Wolves,44,22,31,53,1.2,-3,5,16,3,1,56,21,39.6,31.5
@@ -74,7 +74,7 @@ Carson Harmer,YES,13,,2007.0,5.10,185,C,Saginaw Spirit,47,17,19,36,0.77,9,5,3,2,
 Tanner Lam,NO,37,,2007.0,5.08,140,RW,Kitchener Rangers,48,10,26,36,0.75,12,2,5,1,0,12,7,19.4,59.0
 Quinton Burns,NO,41,,2005.0,6.02,199,D,Kingston Frontenacs,46,8,28,36,0.78,37,2,5,0,0,82,7,19.4,13.0
 Zach Filak,NO,11,,2004.0,6.01,185,C,Sarnia Sting,48,11,24,35,0.73,0,3,4,0,1,53,7,20.0,5.0
-Carey Terrance,NO,10,,2005.0,6.01,186,C,Erie Otters,40,17,17,34,0.85,-1,2,6,1,2,10,8,23.5,48.5
+Carey Terrance,NO,10,,2005.0,6.01,186,C,Erie Otters,41,17,17,34,0.83,-1,2,6,1,2,10,8,23.5,48.5
 Cole Beaudoin,NO,29,,2006.0,6.02,211,C,Barrie Colts,33,15,19,34,1.03,0,6,7,4,1,2,13,38.2,56.5
 Emil Hemming,NO,28,,2006.0,6.01,205,RW,Barrie Colts,42,13,21,34,0.81,8,6,7,2,0,16,13,38.2,49.5
 Jacob Julien,NO,13,,2004.0,6.04,190,C,London Knights,47,9,25,34,0.72,4,3,7,4,0,34,10,29.4,25.5
@@ -97,7 +97,7 @@ Mitch Young,NO,5,,2005.0,6.02,190,D,Sarnia Sting,40,5,27,32,0.8,6,1,7,1,0,62,8,2
 Brad Gardiner,NO,25,,2005.0,6.01,185,C,Barrie Colts,46,15,16,31,0.67,10,3,2,4,0,16,5,16.1,48.0
 Quentin Musty,NO,27,,2005.0,6.02,200,LW,Sudbury Wolves,19,14,17,31,1.63,-5,4,5,0,1,6,9,29.0,42.5
 Evan Van Gorp,NO,14,,2006.0,5.10,165,LW,London Knights,46,14,17,31,0.67,15,2,3,4,2,8,5,16.1,60.5
-Jett Luchanko,NO,7,,2006.0,5.11,191,C,Guelph Storm,24,13,18,31,1.29,-2,3,5,3,0,25,8,25.8,26.0
+Jett Luchanko,NO,7,,2006.0,5.11,191,C,Guelph Storm,25,13,18,31,1.24,-2,3,5,3,0,25,8,25.8,26.0
 Ethan Belchetz,YES,61,,2008.0,6.05,226,LW,Windsor Spitfires,39,13,18,31,0.79,-2,4,5,1,0,25,9,29.0,26.0
 Ryan Brown,NO,23,,2007.0,5.11,172,LW,Sarnia Sting,48,13,18,31,0.65,9,0,3,2,2,19,3,9.7,43.0
 Matthew Buckley,NO,11,,2005.0,5.11,183,RW,Oshawa Generals,48,12,19,31,0.65,2,5,2,0,0,23,7,22.6,31.5
@@ -190,7 +190,7 @@ Ben Cormier,NO,8,,2006.0,6.00,172,C,Owen Sound Attack,44,10,9,19,0.43,-5,2,2,0,1
 Declan Waddick,NO,27,,2005.0,5.09,165,LW,Owen Sound Attack,41,9,10,19,0.46,-9,1,3,0,0,28,4,21.1,-4.0
 Ben Pickell,NO,12,,2005.0,5.09,186,C,Kingston Frontenacs,43,9,10,19,0.44,7,0,0,1,0,34,0,0.0,6.0
 Carter Stevens,YES,96,,2008.0,6.01,184,C,Guelph Storm,45,9,10,19,0.42,-11,5,5,0,0,30,10,52.6,-8.0
-Parker Snelgrove,NO,9,,2007.0,6.00,189,C,Guelph Storm,46,9,10,19,0.41,-10,0,0,0,0,25,0,0.0,-2.0
+Parker Snelgrove,NO,9,,2007.0,6.00,189,C,Guelph Storm,47,9,10,19,0.4,-10,0,0,0,0,25,0,0.0,-2.0
 Gavin Bryant,NO,13,,2004.0,5.11,188,C,Peterborough Petes,34,8,11,19,0.56,-3,2,2,3,0,22,4,21.1,7.5
 Andrew LeBlanc,NO,27,,2004.0,6.00,183,C,North Bay Battalion,38,8,11,19,0.5,-24,2,3,2,0,32,5,26.3,-23.5
 Joshua Avery,YES,86,,2007.0,6.01,170,C,Brantford Bulldogs,44,8,11,19,0.43,2,1,0,0,0,10,1,5.3,24.5
@@ -438,6 +438,7 @@ Lenny Greenberg,NO,23,,2005.0,6.00,180,RD,Owen Sound Attack,2,0,0,0,0.0,-2,0,0,0
 Tommy Karmiris,NO,74,,2006.0,6.00,185,LW,Brantford Bulldogs,3,0,0,0,0.0,0,0,0,0,0,2,0,,-2.0
 Christian Colosimo,YES,73,,2008.0,6.05,215,D,Flint Firebirds,4,0,0,0,0.0,-1,0,0,0,0,2,0,,-3.0
 Michael D'Alessio,YES,7,,2008.0,6.01,170,D,Erie Otters,6,0,0,0,0.0,-3,0,0,0,0,2,0,,-5.0
+Jacob Xu,NO,96,,2008.0,6.02,181,D,Kitchener Rangers,6,0,0,0,0.0,0,0,0,0,0,0,0,,0.0
 Garrett Frazer,NO,8,,2006.0,6.00,180,D,Erie Otters,11,0,0,0,0.0,-9,0,0,0,0,8,0,,-17.0
 Eric Frossard,YES,3,,2008.0,6.04,195,D,Guelph Storm,11,0,0,0,0.0,-3,0,0,0,0,4,0,,-7.0
 Ryan Chamberlain,YES,22,,2008.0,6.02,175,LW,Sarnia Sting,15,0,0,0,0.0,-4,0,0,0,0,4,0,,-8.0
